@@ -1,0 +1,59 @@
+body{
+    background-color:#f1e4c6d7;
+}
+nav { 
+  background-color: #000000; 
+  position: sticky;          
+  z-index: 1000;            
+}
+nav .logo {
+  height: 10px;          
+  width: auto;
+}
+.navbar { 
+  list-style: none;          
+  display: flex;             
+  justify-content: center;   
+}
+
+.navbar li { 
+  position:apsolute;       
+}
+
+.navbar li a { 
+  color: #ffffff;               
+text-decoration: none;  
+  padding: 10px 30px;        
+  display: block;            
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+}
+.navbar li a:hover { /*Upotreba AI-hover efekat*/
+  background-color: #585a5c; 
+}
+
+/* Dropdown meni */
+.dropdown {
+  display: none;             
+  position: absolute;        
+  background-color: #000000; 
+  margin:10px;                     
+  padding:50px;                    
+  margin-bottom: 50px;
+  
+  list-style: none;          
+  min-width: 176px;          
+}
+
+.dropdown li a { 
+  padding: 15px;             
+  color: #fff;               
+}
+
+.dropdown li a:hover { 
+  background-color: #515457; 
+}
+
+.navbar li:hover .dropdown { 
+  display: block;            
+}
