@@ -3,11 +3,12 @@ body{
 }
 nav { 
   background-color: #000000; 
-  position: sticky;          
+  position: sticky;
+  top:0;          
   z-index: 1000;            
 }
 nav .logo {
-  height: 10px;          
+  height: 50px;          
   width: auto;
 }
 .navbar { 
@@ -17,7 +18,7 @@ nav .logo {
 }
 
 .navbar li { 
-  position:apsolute;       
+  position:relative;       
 }
 
 .navbar li a { 
@@ -36,14 +37,15 @@ text-decoration: none;
 .dropdown {
   display: none;             
   position: absolute;        
+  top: 100%;        
+  left: 0;          
   background-color: #000000; 
-  margin:10px;                     
-  padding:50px;                    
-  margin-bottom: 50px;
-  
   list-style: none;          
+  margin: 0;       
+  padding: 0;      
   min-width: 176px;          
 }
+
 
 .dropdown li a { 
   padding: 15px;             
