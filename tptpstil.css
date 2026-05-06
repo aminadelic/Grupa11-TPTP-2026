@@ -112,3 +112,42 @@ p {
 .pravci li ul li {
   font-style: italic;
 }
+.dugmici {
+  text-align: center;
+  margin: 30px ;
+}
+
+.dugmici button {
+  padding: 20px 30px;
+  margin: 5px;
+  border-style:double;
+  border-radius: 8px;
+  color: #fff; /* tekst crn */
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dugmici button:hover {
+  transform: scale(1.10);
+}
+
+
+.renesansa{
+    background-color: #000000;
+}
+.barok{
+    background-color: #000000;
+}
+.impresionizam{
+    background-color: #000000;
+}
+.postimpresionizam{
+    background-color: #000000;
+}
+.ekspresionizam{
+    background-color: #000000;
+}
+.moderna{
+    background-color: #000000;
+}
