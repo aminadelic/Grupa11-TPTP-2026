@@ -57,3 +57,58 @@ text-decoration: none;
 .navbar li:hover .dropdown { 
   display: block;            
 }
+/* Naslovi */
+h1 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  color: #c9a351d7;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  font-size:60px;
+  letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  color: #443514d7;
+  margin-bottom: 50px;
+  font-size:25px;
+  font-style: italic;
+}
+
+/* Paragraf */
+p {
+  max-width: 1000px;
+  margin: auto;
+  text-align: match-parent;
+  font-size: 17px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+
+.pravci {
+  max-width: 1000px;
+  margin:auto ;
+  list-style-type:disc;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+.pravci li {
+  margin: 10px ;
+  padding: 2px;
+  
+}
+
+/* Podlista unutar "Moderna" */
+.pravci li ul {
+  margin-top: 7px;
+  padding:2px;
+  padding-left: 20px;
+}
+
+.pravci li ul li {
+  font-style: italic;
+}
