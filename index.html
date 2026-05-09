@@ -1,58 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="bs">
 <head>
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Virtualna galerija umjetnosti</title>
-  <link rel="stylesheet" href="tptpstil.css">
+  <link rel="stylesheet" href="css/tptpstil.css">
 </head>
 
 <body>
-  <nav>
-    <img src="slike/Logo.jpeg" alt="Logo galerije" class="logo">
-  <ul class="navbar">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#pravci">Umjetnički pravci</a>
-<ul class="dropdown"> 
-        <li><a href="#renesansa">Renesansa</a></li>
-        <li><a href="#barok">Barok</a></li>
-        <li><a href="#impresionizam">Impresionizam</a></li>
-        <li><a href="#ekspresionizam">Ekspresionizam</a></li>
-        <li><a href="#postimpresionizam">Postimpresionizam</a></li>
-        <li><a href="#moderna">Moderna</a></li>
+
+  <header>
+    <picture>
+      <img src="slike/Logo.jpeg" alt="Logo Virtualne galerije umjetnosti" class="logo">
+    </picture>
+    <span class="site-naziv">Virtualna galerija umjetnosti</span>
+
+    <nav aria-label="Glavna navigacija">
+      <ul class="navbar">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="sadrzaj.html">Kolekcija</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="https://github.com/aminadelic/Grupa11-TPTP-2026" target="_blank" rel="noopener">GitHub</a></li>
+        <li><button id="dugmeTema" class="dugme-tema">Tamni mod</button></li>
       </ul>
-      </li>
-    <li><a href="#zlatnakolekcija">Zlatna kolekcija</a></li>
-<li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-</nav>
-<h1 align="center">VIRTUALNA GALERIJA UMJETNOSTI</h1>
-<h2 align="center">Remek-djela svjetske umjetnosti</h2>
+    </nav>
+  </header>
 
-<p>Dobrodošli u virtualnu galeriju umjetničkih pravaca – jedinstveno mjesto gdje možete istražiti razvoj umjetnosti kroz historiju. Svaki pravac predstavljen je kroz svoja najpoznatija djela i osnovne informacije koje vam pomažu da bolje razumijete njegov stil, značaj i utjecaj. Jednostavno pregledajte različite epohe, upoznajte ključne karakteristike i otkrijte umjetnike koji su oblikovali svijet umjetnosti – sve na jednom mjestu, dostupno u svakom trenutku.</p>
+  
+  <section class="hero" id="pocetna">
+    <h1>Virtualna galerija umjetnosti</h1>
+    <h2>Remek-djela svjetske umjetnosti</h2>
+    <p>
+      Dobrodošli u virtualnu galeriju umjetničkih pravaca – mjesto gdje možete istražiti
+      razvoj umjetnosti kroz historiju. Svaki pravac predstavljen je kroz svoja najpoznatija
+      djela i osnovne informacije o stilu, značaju i utjecaju na svijet umjetnosti.
+    </p>
+  </section>
 
-<p>Možete pogledati sljedeće umjetničke pravce:</p>
+<div class="stranica-wrapper">
 
-<ul class="pravci">
-  <li>Renesansa</li>
-  <li>Barok</li>
-  <li>Impresionizam</li>
-  <li>Ekspresionizam</li>
-  <li>Moderna
-   <ul>
-      <li>Kubizam</li>
-      <li>Nadrealizam</li>
-      <li>Apstraktna umjetnost</li>
-    </ul>
-  </li>
-</ul>
-<div class="dugmici">
-  <button  class="renesansa" onclick="location.href='#renesansa'">RENESANSA</button>
-  <button class="barok"  onclick="location.href='#barok'">BAROK</button>
-  <button  class="impresionizam "onclick="location.href='#impresionizam'">IMPRESIONIZAM</button>
-  <button class="postimpresionizam" onclick="location.href='#postimpresionizam'">POSTIMPRESIONIZAM</button>
-  <button class="ekspresionizam" onclick="location.href='#ekspresionizam'">EKSPRESIONIZAM</button>
-  <button class="moderna" onclick="location.href='#moderna'">MODERNA</button>
-</div>
+    <nav class="lijevi-sidebar" aria-label="Filter po umjetničkim pravcima">
+      <h3>Umjetnički pravci</h3>
+      <ul>
+        <li><button class="filter-btn aktivan" data-filter="sve">Sve</button></li>
+        <li><button class="filter-btn" data-filter="renesansa">Renesansa</button></li>
+        <li><button class="filter-btn" data-filter="barok">Barok</button></li>
+        <li><button class="filter-btn" data-filter="impresionizam">Impresionizam</button></li>
+        <li><button class="filter-btn" data-filter="postimpresionizam">Postimpresionizam</button></li>
+        <li><button class="filter-btn" data-filter="ekspresionizam">Ekspresionizam</button></li>
+        <li><button class="filter-btn" data-filter="moderna">Moderna</button></li>
+      </ul>
+
+      <p class="broj-posjeta">Posjeta galeriji: <strong id="brojPosjeta">0</strong></p>
+    </nav>
+
+<aside>
+      <h3>Uvod u historiju umjetnosti</h3>
+      <iframe
+        width="100%"
+        height="190"
+        src="https://www.youtube.com/watch?v=hXBvN475dwo"
+        title="Uvod u historiju svjetske umjetnosti"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+      <p>Kratki pregled najvažnijih umjetničkih epoha i stilova kroz historiju.</p>
+
+      <h3>Pregled epoha</h3>
+      <ul class="pravci-lista">
+        <li>Renesansa
+          <ul>
+            <li>Rana renesansa</li>
+            <li>Visoka renesansa</li>
+          </ul>
+        </li>
+        <li>Barok</li>
+        <li>Impresionizam
+          <ul>
+            <li>Plenerizam</li>
+            <li>Neoimpresionizam</li>
+          </ul>
+        </li>
+        <li>Postimpresionizam</li>
+        <li>Ekspresionizam</li>
+        <li>Moderna
+          <ul>
+            <li>Kubizam</li>
+            <li>Nadrealizam</li>
+            <li>Apstraktna umjetnost</li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+  </div>
+
 </body>
 </html>
