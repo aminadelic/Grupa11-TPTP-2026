@@ -1,65 +1,77 @@
 body{
     background-color:#f1e4c6d7;
 }
-nav { 
-  background-color: #000000; 
+header {
+  background-color: var(--boja-nav);
   position: sticky;
-  top:0;          
-  z-index: 1000;            
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--razmak-m);
+  padding: 10px var(--razmak-l);
 }
-nav .logo {
-  height: 50px;          
+
+.logo {
+  height: 45px;
   width: auto;
-  vertical-align:middle;
-}
-.navbar { 
-  list-style: none;          
-  display: flex;             
-  justify-content: center;   
+  border-radius: 4px;
 }
 
-.navbar li { 
-  position:relative;       
-}
-
-.navbar li a { 
-  color: #ffffff;               
-text-decoration: none;  
-  padding: 10px 30px;        
-  display: block;            
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.site-naziv {
+  color: var(--boja-zlatna);
+  font-family: var(--font-glavni);
   font-style: italic;
-}
-.navbar li a:hover { /*Upotreba AI-hover efekat*/
-  background-color: #585a5c; 
-}
-
-/* Dropdown meni */
-.dropdown {
-  display: none;             
-  position: absolute;        
-  top: 100%;        
-  left: 0;          
-  background-color: #000000; 
-  list-style: none;          
-  margin: 0;       
-  padding: 0;      
-  min-width: 176px;          
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
-
-.dropdown li a { 
-  padding: 15px;             
-  color: #fff;               
+header nav {
+  margin-left: auto;
 }
 
-.dropdown li a:hover { 
-  background-color: #515457; 
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.navbar li:hover .dropdown { 
-  display: block;            
+.navbar a {
+  color: #fff;
+  padding: 8px 16px;
+  display: block;
+  font-family: var(--font-glavni);
+  font-style: italic;
+  border-radius: var(--radijus);
+  transition: background-color var(--tranzicija);
 }
+
+.navbar a:hover,
+.navbar a:focus {
+  background-color: #333;
+  color: var(--boja-zlatna);
+  text-decoration: none;
+}
+
+.dugme-tema {
+  background: transparent;
+  border: 1px solid var(--boja-zlatna);
+  color: var(--boja-zlatna);
+  padding: 7px 14px;
+  font-family: var(--font-glavni);
+  font-style: italic;
+  cursor: pointer;
+  border-radius: var(--radijus);
+  font-size: 0.9rem;
+  transition: background-color var(--tranzicija), color var(--tranzicija);
+}
+
+.dugme-tema:hover,
+.dugme-tema:focus {
+  background-color: var(--boja-zlatna);
+  color: #000;
+}
+
 /* Naslovi */
 h1 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
