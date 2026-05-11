@@ -1,6 +1,62 @@
-body{
-    background-color:#f1e4c6d7;
+:root {
+  --boja-pozadina: #f5efe6;
+  --boja-tekst: #2c1f0e;
+  --boja-zlatna: #c9a351;
+  --boja-nav: #1a1209;
+  --boja-kartica: #ffffff;
+  --boja-sidebar: #ede3d4;
+  --boja-footer: #1a1209;
+  --boja-footer-tekst: #e8d9c0;
+
+  --font-glavni: 'Trebuchet MS', Arial, sans-serif;
+  --font-tijelo: 'Lucida Sans', Geneva, Verdana, sans-serif;
+
+  --razmak-m: 16px;
+  --razmak-l: 32px;
+
+  --radijus: 8px;
+  --tranzicija: 0.3s ease;
 }
+
+*, *::before, *::after {  /*Iskoristen prijedlog Ai*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--boja-pozadina);
+  color: var(--boja-tekst);
+  font-family: var(--font-tijelo);
+  line-height: 1.7;
+  transition: background-color var(--tranzicija), color var(--tranzicija);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--boja-zlatna);
+  text-decoration: none;
+  transition: color var(--tranzicija);
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
 header {
   background-color: var(--boja-nav);
   position: sticky;
@@ -74,7 +130,7 @@ header nav {
 
 /* Naslovi */
 h1 {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--font-glavni);
   text-align: center;
   color: #c9a351d7;
   margin-top: 80px;
@@ -84,7 +140,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--font-glavni);
   text-align: center;
   color: #443514d7;
   margin-bottom: 50px;
@@ -98,7 +154,7 @@ p {
   margin: auto;
   text-align: match-parent;
   font-size: 17px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: var(--font-tijelo);
   font-style: italic;
 }
 
