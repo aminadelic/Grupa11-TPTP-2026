@@ -195,4 +195,72 @@ header nav {
   align-items: flex-start;
 }
 
+.lijevi-sidebar {
+  width: 180px;
+  flex-shrink: 0;
+  background-color: var(--boja-sidebar);
+  border-radius: var(--radijus);
+  padding: var(--razmak-m);
+  position: sticky;
+  top: 70px;
+}
+
+.lijevi-sidebar h3 {
+  font-family: var(--font-glavni);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--boja-zlatna);
+  margin-bottom: var(--razmak-m);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--boja-zlatna);
+}
+
+.lijevi-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--boja-tekst);
+  padding: 8px 10px;
+  font-family: var(--font-glavni);
+  font-style: italic;
+  cursor: pointer;
+  border-radius: var(--radijus);
+  font-size: 0.9rem;
+  transition: background-color var(--tranzicija);
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+  background-color: rgba(201, 163, 81, 0.15);
+}
+
+.filter-btn.aktivan {
+  background-color: var(--boja-zlatna);
+  color: #fff;
+}
+
+.lijevi-sidebar li:nth-child(even) .filter-btn:not(.aktivan) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.broj-posjeta {
+  margin-top: var(--razmak-m);
+  padding-top: 10px;
+  border-top: 1px solid rgba(201, 163, 81, 0.3);
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.broj-posjeta strong {
+  color: var(--boja-zlatna);
+}
 
