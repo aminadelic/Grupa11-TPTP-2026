@@ -1,3 +1,4 @@
+/*Varijable*/
 :root {
   --boja-pozadina: #f5efe6;
   --boja-tekst: #2c1f0e;
@@ -17,6 +18,8 @@
   --radijus: 8px;
   --tranzicija: 0.3s ease;
 }
+
+/*Tamni mod*/
 body.tamni-mod {
   --boja-pozadina: #1a1209;
   --boja-tekst: #e8d9c0;
@@ -32,7 +35,7 @@ body.tamni-mod {
     --boja-sidebar: #231810;
   }
 }
-
+/*Osnovni stilovi*/
 *, *::before, *::after {  /*Iskoristen prijedlog Ai*/
   box-sizing: border-box;
   margin: 0;
@@ -71,7 +74,7 @@ a:hover,
 a:focus {
   text-decoration: underline;
 }
-
+/*Header*/
 header {
   background-color: var(--boja-nav);
   position: sticky;
@@ -142,6 +145,7 @@ header nav {
   background-color: var(--boja-zlatna);
   color: #000;
 }
+/*Glavni sadrzaj*/
 .hero {
   text-align: center;
   padding: 60px var(--razmak-l) var(--razmak-l);
@@ -185,7 +189,7 @@ header nav {
   font-style: italic;
   font-size: 0.95rem;
 }
-
+/*Wrapper*/
 .stranica-wrapper {
   display: flex;
   gap: var(--razmak-l);
@@ -194,7 +198,7 @@ header nav {
   padding: var(--razmak-l);
   align-items: flex-start;
 }
-
+/*Lijevi sidebar*/
 .lijevi-sidebar {
   width: 180px;
   flex-shrink: 0;
@@ -263,7 +267,7 @@ header nav {
 .broj-posjeta strong {
   color: var(--boja-zlatna);
 }
-
+/*CSS grid za kartice*/
 main {
   flex: 1;
   min-width: 0;
@@ -347,9 +351,7 @@ main {
   opacity: 0.6;
 }
 
-/* -------------------------------------------
-   9. ASIDE
-------------------------------------------- */
+/*Aside*/
 aside {
   width: 260px;
   flex-shrink: 0;
@@ -400,4 +402,51 @@ aside > p {
 .pravci-lista ul li {
   margin-bottom: 2px;
   opacity: 0.8;
+}
+/*Footer*/
+footer {
+  background-color: var(--boja-footer);
+  color: var(--boja-footer-tekst);
+  padding: var(--razmak-l);
+  margin-top: var(--razmak-l);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--razmak-l);
+  justify-content: space-between;
+}
+
+footer h4 {
+  font-family: var(--font-glavni);
+  color: var(--boja-zlatna);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+footer a {
+  color: var(--boja-footer-tekst);
+  font-size: 0.88rem;
+  opacity: 0.75;
+  transition: color var(--tranzicija), opacity var(--tranzicija);
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--boja-zlatna);
+  opacity: 1;
+  text-decoration: none;
 }
