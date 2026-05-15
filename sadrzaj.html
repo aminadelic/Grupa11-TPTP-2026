@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sadržaj - Virtualna Galerija</title>
     <link rel="stylesheet" href="css/tptpstil.css">
-    <title>Sadržaj - Virtualna Galerija</title>
 </head>
 
 <body id="top">
@@ -30,6 +29,7 @@
         </nav>
        
     </header>
+    <main>
      <section id="navigacija-pravci">
             <h2>Istražite umjetničke pravce</h2>
             <p>Kliknite na pravac da biste saznali više o njegovim karakteristikama:</p>
@@ -153,6 +153,48 @@
                 </article>
 
             </div>
+            <!-- Image map - Atinska škola -->
+<div class="imagemap-kontejner">
+  <h3>Istražite figure na fresci — kliknite na grupu</h3>
+  <img src="slike/atenska skola.jpg"
+       alt="Rafael - Atinska škola sa klikabilnim područjima"
+       usemap="#mapa-atenska"
+       style="width:100%; max-width:1308px; display:block;">
+
+  <map name="mapa-atenska">
+    <!-- Platon i Aristotel - centar slike -->
+    <area shape="rect"
+          coords="520,250,750,580"
+          href="https://bs.wikipedia.org/wiki/Platon"
+          target="_blank"
+          alt="Platon i Aristotel"
+          title="Platon i Aristotel">
+
+    <!-- Lijeva grupa - Pitagora, Heraklit -->
+    <area shape="rect"
+          coords="0,300,520,736"
+          href="https://bs.wikipedia.org/wiki/Pitagora"
+          target="_blank"
+          alt="Pitagora i Heraklit"
+          title="Pitagora i Heraklit">
+
+    <!-- Desna grupa - Euklid, Ptolemej -->
+    <area shape="rect"
+          coords="750,300,1308,736"
+          href="https://bs.wikipedia.org/wiki/Euklid"
+          target="_blank"
+          alt="Euklid i Ptolemej"
+          title="Euklid i Ptolemej">
+
+    <!-- Gornji luk - arhitektura -->
+    <area shape="rect"
+          coords="350,0,950,250"
+          href="https://bs.wikipedia.org/wiki/Atinska_%C5%A1kola"
+          target="_blank"
+          alt="Atinska škola"
+          title="Više o fresci">
+  </map>
+</div>
            <a href="#navigacija-pravci">Povratak na ostale pravce</a>
 
         </section>
@@ -524,5 +566,25 @@
             </div>
              <a href="#navigacija-pravci">Povratak na ostale pravce</a>
         </section>
+        <a href="#top">Skoči na vrh</a>
+    </main>
+       <footer>
+    <section class="footer-autori">
+      <h4>Autori projekta</h4>
+      <p>Amina Arifagić &bull; Amina Bulić &bull; Amina Delić</p>
+      <p>Godina: 2025/2026</p>
+    </section>
+    <section class="footer-nav">
+      <h4>Navigacija</h4>
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="sadrzaj.html">Kolekcija</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </section>
+  </footer>
+  <script src="js/tptpskripte.js"></script>
+</body>
+</html>
 
 
