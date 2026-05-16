@@ -11,7 +11,10 @@ Virtualna galerija umjetnosti je web stranica koja prikazuje remek-djela svjetsk
 - JavaScript (bez biblioteka)
 ## AI alati koristeni u projektu
 - Claude: objasnjenje JS
-- ChatGPT:Prijedlozi za CSS
+- ChatGPT:Prijedlozi za CSS, logo stranice
+
+- ## Napomene
+- Sve korištene slike su preuzete sa Google Images.
 
 
 
