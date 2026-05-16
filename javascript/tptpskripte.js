@@ -93,3 +93,125 @@ function skalajImageMap() {
 
 window.addEventListener('load', skalajImageMap);
 window.addEventListener('resize', skalajImageMap);
+
+/*Filtriranje kartica*/
+
+   /*Uz pomoć Claude-a sam razumjela kako filtriranje funkcioniše:
+   data-filter atribut na dugmetu se poredi sa data-kategorija atributom
+   na kartici. Ako se ne podudaraju, kartica dobija klasu "sakrivena"
+   koja je u CSS-u postavljena na display: none.*/
+
+(function () {
+  var filterDugmici = document.querySelectorAll('.filter-btn');
+  var kartice = document.querySelectorAll('.kartica');
+  var nemaRezultata = document.getElementById('nemaRezultata');
+
+  filterDugmici.forEach(function (dugme) {
+    dugme.addEventListener('click', function () {
+
+      filterDugmici.forEach(function (d) {
+        d.classList.remove('aktivan');
+      });
+      this.classList.add('aktivan');
+
+      var odabraniFilter = this.dataset.filter;
+      var brojPrikazanih = 0;
+
+      kartice.forEach(function (kartica) {
+        if (odabraniFilter === 'sve' || kartica.dataset.kategorija === odabraniFilter) {
+          kartica.classList.remove('sakrivena');
+          brojPrikazanih++;
+        } else {
+          kartica.classList.add('sakrivena');
+        }
+      });
+
+      if (nemaRezultata) {
+        nemaRezultata.style.display = (brojPrikazanih === 0) ? 'block' : 'none';
+      }
+    });
+  });
+}());
+
+
+/*Tamni mod(upotrebom LocalStorage-a)*/
+
+   /*Uz pomoć Claude-a sam razumjela funkcionisanje LocalStorage-a:
+   localStorage.setItem(kljuc, vrijednost) pamti podatak u browseru.
+   localStorage.getItem(kljuc) čita taj podatak pri sljedećem posjetu.
+   getItem vraća null ako ključ ne postoji, inače vraća string.*/
+
+(function () {
+  var dugmeTema = document.getElementById('dugmeTema');
+
+  if (!dugmeTema) return;
+
+  if (localStorage.getItem('tema') === 'tamni') {
+    document.body.classList.add('tamni-mod');
+    dugmeTema.textContent = 'Svjetli mod';
+  }
+
+  dugmeTema.addEventListener('click', function () {
+    var jeTamna = document.body.classList.toggle('tamni-mod');
+
+    if (jeTamna) {
+      localStorage.setItem('tema', 'tamni');
+      dugmeTema.textContent = 'Svjetli mod';
+    } else {
+      localStorage.setItem('tema', 'svjetli');
+      dugmeTema.textContent = 'Tamni mod';
+    }
+  });
+}());
+
+
+/* Brojač posjeta*/
+
+   /*Uz pomoć Claude-a sam razumjela funkcionisanje brojača:
+   parseInt() pretvara string iz LocalStorage-a u broj jer
+   LocalStorage uvijek čuva podatke kao string.
+   isNaN() provjerava je li vrijednost broj – ako nije (prvi posjet),
+   počinjemo od nule.*/
+
+(function () {
+  var brojac = document.getElementById('brojPosjeta');
+
+  if (!brojac) return;
+
+  var trenutniBroj = parseInt(localStorage.getItem('brojPosjeta'), 10);
+
+  if (isNaN(trenutniBroj)) {
+    trenutniBroj = 0;
+  }
+
+  trenutniBroj = trenutniBroj + 1;
+  localStorage.setItem('brojPosjeta', trenutniBroj);
+  brojac.textContent = trenutniBroj;
+}());
+
+
+/* Hamburger meni*/
+
+   /*Uz pomoć Claude-a sam razumjela kako hamburger meni funkcioniše:
+   classList.toggle('otvoren') dodaje klasu ako je nema, uklanja ako postoji.
+   Na taj način se navigacija otvara i zatvara klikom na dugme.
+   Kad korisnik klikne na link u meniju, meni se automatski zatvara.*/
+
+(function () {
+  var hamburger = document.getElementById('hamburger');
+  var navbar = document.querySelector('.navbar');
+
+  if (!hamburger || !navbar) return;
+
+  hamburger.addEventListener('click', function () {
+    navbar.classList.toggle('otvoren');
+    hamburger.textContent = navbar.classList.contains('otvoren') ? '✕' : '≡';
+  });
+
+  navbar.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navbar.classList.remove('otvoren');
+      hamburger.textContent = '≡';
+    });
+  });
+}());
