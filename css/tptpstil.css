@@ -693,7 +693,29 @@ section[id] > a[href="#navigacija-pravci"]:focus {
 
 /* ------ RESPONZIVNOST ------ */
 
-@media (max-width: 768px) {
+/* Tablet (600px - 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .stranica-wrapper {
+    flex-direction: column;
+  }
+
+  .lijevi-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  #mrezaKartica {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galerija-kontejner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   #navigacija-pravci {
     padding: var(--razmak-m);
   }
@@ -708,8 +730,53 @@ section[id] > a[href="#navigacija-pravci"]:focus {
     padding: var(--razmak-m);
   }
 
+  #tabela-renesansa table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Mobitel (ispod 600px) */
+@media (max-width: 600px) {
+  .stranica-wrapper {
+    flex-direction: column;
+    padding: var(--razmak-m);
+  }
+
+  .lijevi-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  #mrezaKartica {
+    grid-template-columns: 1fr;
+  }
+
   .galerija-kontejner {
     grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  #navigacija-pravci {
+    padding: var(--razmak-m);
+  }
+
+  body > section,
+  body section[id] {
+    padding: var(--razmak-m);
   }
 
   #tabela-renesansa table {
@@ -717,7 +784,14 @@ section[id] > a[href="#navigacija-pravci"]:focus {
     overflow-x: auto;
     white-space: nowrap;
   }
+
+  footer {
+    flex-direction: column;
+    gap: var(--razmak-m);
+  }
 }
+
+
 /* ============================================================
    INDIVIDUALNE POZICIJE SLIKA
    ============================================================ */
@@ -807,11 +881,5 @@ footer h4 {
   text-decoration: none;
 }
  
-/* --- mobilni --- */
-@media (max-width: 600px) {
-  footer {
-    flex-direction: column;
-    gap: var(--razmak-m);
-  }
-}
+
 
