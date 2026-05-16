@@ -145,6 +145,11 @@ header nav {
   background-color: var(--boja-zlatna);
   color: #000;
 }
+
+#hamburger {
+  display: none;
+}
+
 /*Glavni sadrzaj*/
 .hero {
   text-align: center;
@@ -453,6 +458,26 @@ footer a:focus {
 
 /*Media queries*/
 @media (max-width: 900px) {
+
+#hamburger {  /*AI prijedlog stila za hamburger meni*/
+  display: block;
+  background: transparent;
+  border: none;
+  color: var(--boja-zlatna);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar {
+  display: none;
+}
+
+.navbar.otvoren {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
   #mrezaKartica {
     grid-template-columns: repeat(2, 1fr);
   }
