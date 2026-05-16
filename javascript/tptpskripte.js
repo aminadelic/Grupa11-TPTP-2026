@@ -13,7 +13,7 @@ const dugmeTema = document.getElementById('dugmeTema');
 // Provjeri da li je korisnik već odabrao tamni mod
 if (localStorage.getItem('tema') === 'tamni') {
     document.body.classList.add('tamni-mod');
-    if (dugmeTema) dugmeTema.textContent = 'Svjetli mod';
+    if (dugmeTema) dugmeTema.textContent = 'Svijetli mod';
 }
 
 // Toggle tamni/svjetli mod na klik
@@ -23,9 +23,9 @@ if (dugmeTema) {
 
         if (document.body.classList.contains('tamni-mod')) {
             localStorage.setItem('tema', 'tamni');
-            dugmeTema.textContent = 'Svjetli mod';
+            dugmeTema.textContent = 'Svijetli mod';
         } else {
-            localStorage.setItem('tema', 'svjetli');
+            localStorage.setItem('tema', 'svijetli');
             dugmeTema.textContent = 'Tamni mod';
         }
     });
