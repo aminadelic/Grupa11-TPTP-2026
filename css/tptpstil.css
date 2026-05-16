@@ -450,3 +450,491 @@ footer a:focus {
   opacity: 1;
   text-decoration: none;
 }
+
+/*Media queries*/
+@media (max-width: 900px) {
+  #mrezaKartica {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stranica-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .lijevi-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .lijevi-sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    width: auto;
+  }
+
+  aside {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header {
+    flex-wrap: wrap;
+    padding: 8px var(--razmak-m);
+  }
+}
+
+@media (max-width: 600px) {
+  #mrezaKartica {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px var(--razmak-m) var(--razmak-m);
+  }
+
+  .stranica-wrapper {
+    padding: var(--razmak-m);
+  }
+
+  footer {
+    flex-direction: column;
+    gap: var(--razmak-m);
+  }
+}
+
+
+/* ------ NAVIGACIJA PRAVCI ------ */
+
+#navigacija-pravci {
+  max-width: 1300px;
+  margin: var(--razmak-l) auto var(--razmak-m);
+  padding: var(--razmak-m) var(--razmak-l);
+  background-color: var(--boja-sidebar);
+  border-radius: var(--radijus);
+  border-left: 4px solid var(--boja-zlatna);
+}
+
+#navigacija-pravci h2 {
+  font-family: var(--font-glavni);
+  color: var(--boja-zlatna);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+#navigacija-pravci p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+#navigacija-pravci nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#navigacija-pravci nav ul li a {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: var(--boja-nav);
+  color: var(--boja-zlatna);
+  border: 1px solid var(--boja-zlatna);
+  border-radius: var(--radijus);
+  font-family: var(--font-glavni);
+  font-size: 0.88rem;
+  transition: background-color var(--tranzicija), color var(--tranzicija);
+}
+
+#navigacija-pravci nav ul li a:hover,
+#navigacija-pravci nav ul li a:focus {
+  background-color: var(--boja-zlatna);
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* ------ SEKCIJE PRAVACA ------ */
+
+body > section,
+body section[id] {
+  max-width: 1300px;
+  margin: var(--razmak-l) auto 0;
+  padding: var(--razmak-m) var(--razmak-l);
+}
+
+section[id] > h2:first-child {
+  font-family: var(--font-glavni);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: var(--boja-zlatna);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--boja-zlatna);
+}
+
+section[id] > p {
+  max-width: 900px;
+  font-size: 0.95rem;
+  margin-bottom: var(--razmak-m);
+  line-height: 1.8;
+}
+
+
+/* ------ LISTA PREDSTAVNIKA ------ */
+
+ul[class^="glavna-lista"] {
+  margin: var(--razmak-m) 0;
+  padding-left: var(--razmak-m);
+}
+
+ul[class^="glavna-lista"] > li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+ul[class^="glavna-lista"] > li > ul {
+  padding-left: var(--razmak-m);
+  margin-top: 4px;
+}
+
+ul[class^="glavna-lista"] > li > ul > li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+ul[class^="glavna-lista"] > li > ul > li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--boja-zlatna);
+}
+
+
+/* ------ TABELA ------ */
+
+#tabela-renesansa {
+  margin: var(--razmak-m) 0;
+}
+
+#tabela-renesansa h2 {
+  font-family: var(--font-glavni);
+  font-size: 1.1rem;
+  color: var(--boja-zlatna);
+  margin-bottom: 6px;
+}
+
+#tabela-renesansa p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+#tabela-renesansa table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border: none;
+}
+
+#tabela-renesansa thead {
+  background-color: var(--boja-nav);
+}
+
+#tabela-renesansa thead th {
+  color: var(--boja-zlatna);
+  font-family: var(--font-glavni);
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--boja-zlatna);
+}
+
+#tabela-renesansa tbody tr {
+  transition: background-color var(--tranzicija);
+}
+
+#tabela-renesansa tbody tr:nth-child(even) {
+  background-color: var(--boja-sidebar);
+}
+
+#tabela-renesansa tbody tr:hover {
+  background-color: color-mix(in srgb, var(--boja-zlatna) 15%, transparent);
+}
+
+#tabela-renesansa tbody td {
+  padding: 9px 14px;
+  border: 1px solid color-mix(in srgb, var(--boja-zlatna) 30%, transparent);
+  vertical-align: top;
+}
+
+
+/* ------ GALERIJA KONTEJNER (kartice) ------ */
+
+.galerija-kontejner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--razmak-l);
+  margin: var(--razmak-m) 0;
+}
+
+.umetnicko-djelo {
+  background-color: var(--boja-kartica);
+  border-radius: var(--radijus);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform var(--tranzicija), box-shadow var(--tranzicija);
+  display: flex;
+  flex-direction: column;
+}
+
+.umetnicko-djelo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.umetnicko-djelo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.umetnicko-djelo h3 {
+  font-family: var(--font-glavni);
+  font-size: 0.95rem;
+  color: var(--boja-zlatna);
+  padding: 12px 14px 4px;
+  line-height: 1.4;
+}
+
+.umetnicko-djelo p {
+  font-size: 0.88rem;
+  padding: 4px 14px 14px;
+  line-height: 1.7;
+  flex: 1;
+}
+
+
+/* ------ LINK "POVRATAK NA OSTALE PRAVCE" ------ */
+
+section[id] > a[href="#navigacija-pravci"] {
+  display: inline-block;
+  margin-top: var(--razmak-m);
+  font-family: var(--font-glavni);
+  font-size: 0.85rem;
+  color: var(--boja-zlatna);
+  border: 1px solid var(--boja-zlatna);
+  padding: 5px 12px;
+  border-radius: var(--radijus);
+  transition: background-color var(--tranzicija), color var(--tranzicija);
+}
+
+section[id] > a[href="#navigacija-pravci"]:hover,
+section[id] > a[href="#navigacija-pravci"]:focus {
+  background-color: var(--boja-zlatna);
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* ------ RESPONZIVNOST ------ */
+
+/* Tablet (600px - 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .stranica-wrapper {
+    flex-direction: column;
+  }
+
+  .lijevi-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  #mrezaKartica {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galerija-kontejner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #navigacija-pravci {
+    padding: var(--razmak-m);
+  }
+
+  #navigacija-pravci nav ul {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  body > section,
+  body section[id] {
+    padding: var(--razmak-m);
+  }
+
+  #tabela-renesansa table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Mobitel (ispod 600px) */
+@media (max-width: 600px) {
+  .stranica-wrapper {
+    flex-direction: column;
+    padding: var(--razmak-m);
+  }
+
+  .lijevi-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  #mrezaKartica {
+    grid-template-columns: 1fr;
+  }
+
+  .galerija-kontejner {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  #navigacija-pravci {
+    padding: var(--razmak-m);
+  }
+
+  body > section,
+  body section[id] {
+    padding: var(--razmak-m);
+  }
+
+  #tabela-renesansa table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: var(--razmak-m);
+  }
+}
+
+
+/* ============================================================
+   INDIVIDUALNE POZICIJE SLIKA
+   ============================================================ */
+ 
+/* --- RENESANSA --- */
+/* Mona Lisa (1.) */
+[id="galerija-detalji renesansa"] .galerija-kontejner .umetnicko-djelo:nth-child(1) img { object-position: 30% 20%; }
+/* David (3.) */
+[id="galerija-detalji renesansa"] .galerija-kontejner .umetnicko-djelo:nth-child(3) img { object-position: 20% 20%; }
+/* Posljednja večera (4.) */
+[id="galerija-detalji renesansa"] .galerija-kontejner .umetnicko-djelo:nth-child(4) img { object-position: top; }
+/* Atinska škola (5.) */
+[id="galerija-detalji renesansa"] .galerija-kontejner .umetnicko-djelo:nth-child(5) img { object-position: top; }
+ 
+/* --- BAROK --- */
+/* Las Meninas (2.) */
+[id="galerija-detalji barok"] .galerija-kontejner .umetnicko-djelo:nth-child(2) img { object-position: bottom; }
+/* Zanos svete Tereze (4.) */
+[id="galerija-detalji barok"] .galerija-kontejner .umetnicko-djelo:nth-child(4) img { object-position: top; }
+ 
+/* --- IMPRESIONIZAM --- */
+/* Baletne plesačice (5.) */
+[id="galerija-detalji impresionizam"] .galerija-kontejner .umetnicko-djelo:nth-child(5) img { object-position: center; }
+ 
+/* --- POSTIMPRESIONIZAM --- */
+/* Suncokreti (2.) */
+[id="galerija-detalji postimpresionizam"] .galerija-kontejner .umetnicko-djelo:nth-child(2) img { object-position: top; }
+ 
+/* --- EKSPRESIONIZAM --- */
+/* Vrisak (1.) */
+[id="galerija-detalji ekspresionizam"] .galerija-kontejner .umetnicko-djelo:nth-child(1) img { object-position: bottom; }
+/* Ulica u Berlinu (4.) */
+[id="galerija-detalji ekspresionizam"] .galerija-kontejner .umetnicko-djelo:nth-child(4) img { object-position: top; }
+/* Plavi konj (5.) */
+[id="galerija-detalji ekspresionizam"] .galerija-kontejner .umetnicko-djelo:nth-child(5) img { object-position: top; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+ 
+footer {
+  background-color: var(--boja-footer);
+  color: var(--boja-footer-tekst);
+  margin-top: var(--razmak-l);
+  padding: var(--razmak-l);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--razmak-l);
+  flex-wrap: wrap;
+}
+ 
+footer h4 {
+  font-family: var(--font-glavni);
+  color: var(--boja-zlatna);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--boja-zlatna);
+}
+ 
+/* --- autori --- */
+.footer-autori p {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+ 
+/* --- navigacija --- */
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+ 
+.footer-nav ul li a {
+  color: var(--boja-footer-tekst);
+  font-family: var(--font-glavni);
+  font-size: 0.88rem;
+  transition: color var(--tranzicija);
+}
+ 
+.footer-nav ul li a:hover,
+.footer-nav ul li a:focus {
+  color: var(--boja-zlatna);
+  text-decoration: none;
+}
+ 
+
+
