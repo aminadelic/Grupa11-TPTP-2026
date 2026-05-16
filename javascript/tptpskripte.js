@@ -133,38 +133,6 @@ window.addEventListener('resize', skalajImageMap);
   });
 }());
 
-
-/*Tamni mod(upotrebom LocalStorage-a)*/
-
-   /*Uz pomoć Claude-a sam razumjela funkcionisanje LocalStorage-a:
-   localStorage.setItem(kljuc, vrijednost) pamti podatak u browseru.
-   localStorage.getItem(kljuc) čita taj podatak pri sljedećem posjetu.
-   getItem vraća null ako ključ ne postoji, inače vraća string.*/
-
-(function () {
-  var dugmeTema = document.getElementById('dugmeTema');
-
-  if (!dugmeTema) return;
-
-  if (localStorage.getItem('tema') === 'tamni') {
-    document.body.classList.add('tamni-mod');
-    dugmeTema.textContent = 'Svjetli mod';
-  }
-
-  dugmeTema.addEventListener('click', function () {
-    var jeTamna = document.body.classList.toggle('tamni-mod');
-
-    if (jeTamna) {
-      localStorage.setItem('tema', 'tamni');
-      dugmeTema.textContent = 'Svjetli mod';
-    } else {
-      localStorage.setItem('tema', 'svjetli');
-      dugmeTema.textContent = 'Tamni mod';
-    }
-  });
-}());
-
-
 /* Brojač posjeta*/
 
    /*Uz pomoć Claude-a sam razumjela funkcionisanje brojača:
