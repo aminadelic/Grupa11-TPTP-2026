@@ -145,6 +145,11 @@ header nav {
   background-color: var(--boja-zlatna);
   color: #000;
 }
+
+#hamburger {
+  display: none;
+}
+
 /*Glavni sadrzaj*/
 .hero {
   text-align: center;
@@ -450,11 +455,86 @@ footer a:focus {
   opacity: 1;
   text-decoration: none;
 }
-/* ============================================================
-   DODATNI CSS ZA sadrzaj.html
-   Dodaje se na kraju tptpstil.css fajla.
-   Ne mijenja niti jedan postojeći selektor.
-   ============================================================ */
+
+/*Media queries*/
+@media (max-width: 900px) {
+
+#hamburger {  /*AI prijedlog stila za hamburger meni*/
+  display: block;
+  background: transparent;
+  border: none;
+  color: var(--boja-zlatna);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar {
+  display: none;
+}
+
+.navbar.otvoren {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+  #mrezaKartica {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stranica-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .lijevi-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .lijevi-sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    width: auto;
+  }
+
+  aside {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header {
+    flex-wrap: wrap;
+    padding: 8px var(--razmak-m);
+  }
+}
+
+@media (max-width: 600px) {
+  #mrezaKartica {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px var(--razmak-m) var(--razmak-m);
+  }
+
+  .stranica-wrapper {
+    padding: var(--razmak-m);
+  }
+
+  footer {
+    flex-direction: column;
+    gap: var(--razmak-m);
+  }
+}
 
 
 /* ------ NAVIGACIJA PRAVCI ------ */
