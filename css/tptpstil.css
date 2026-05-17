@@ -961,5 +961,255 @@ footer h4 {
   text-decoration: none;
 }
  
+/* ============================================================
+   MOJ DIO — Amina Arifagić
+   ============================================================ */
 
+/* ------ ZLATNA KOLEKCIJA — tabela ------ */
+#tabela-zlatna {
+  margin: var(--razmak-m) 0;
+}
 
+#tabela-zlatna h2 {
+  font-family: var(--font-glavni);
+  font-size: 1.1rem;
+  color: var(--boja-zlatna);
+  margin-bottom: 6px;
+}
+
+#tabela-zlatna p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+#tabela-zlatna table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#tabela-zlatna thead {
+  background-color: var(--boja-nav);
+}
+
+#tabela-zlatna thead th {
+  color: var(--boja-zlatna);
+  font-family: var(--font-glavni);
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--boja-zlatna);
+}
+
+#tabela-zlatna tbody tr:nth-child(even) {
+  background-color: var(--boja-sidebar);
+}
+
+#tabela-zlatna tbody tr:hover {
+  background-color: rgba(201, 163, 81, 0.15);
+}
+
+#tabela-zlatna tbody td {
+  padding: 9px 14px;
+  border: 1px solid rgba(201, 163, 81, 0.3);
+  vertical-align: top;
+}
+
+/* ------ IMAGE MAP KONTEJNER ------ */
+.imagemap-kontejner {
+  margin: var(--razmak-m) 0;
+  padding: var(--razmak-m);
+  background-color: var(--boja-sidebar);
+  border-radius: var(--radijus);
+}
+
+.imagemap-kontejner h3 {
+  font-family: var(--font-glavni);
+  color: var(--boja-zlatna);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Mobitel */
+@media (max-width: 600px) {
+  #tabela-zlatna table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+/* ------ KONTAKT STRANICA — Amina Arifagić ------ */
+.kontakt-main {
+  display: flex;
+  gap: var(--razmak-l);
+  max-width: 1300px;
+  margin: var(--razmak-l) auto;
+  padding: 0 var(--razmak-l);
+  align-items: flex-start;
+}
+
+.kontakt-sekcija {
+  flex: 1;
+}
+
+.kontakt-sekcija h1 {
+  font-family: var(--font-glavni);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--boja-zlatna);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--boja-zlatna);
+}
+
+.kontakt-sekcija > p {
+  font-size: 0.95rem;
+  margin-bottom: var(--razmak-l);
+  opacity: 0.8;
+}
+
+.forma-grupa {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: var(--razmak-m);
+}
+
+.forma-grupa label {
+  font-family: var(--font-glavni);
+  font-size: 0.9rem;
+  color: var(--boja-tekst);
+}
+
+.obavezno {
+  color: var(--boja-zlatna);
+}
+
+.forma-grupa input,
+.forma-grupa select,
+.forma-grupa textarea {
+  background-color: var(--boja-kartica);
+  color: var(--boja-tekst);
+  border: 1px solid rgba(201, 163, 81, 0.4);
+  border-radius: var(--radijus);
+  padding: 10px 14px;
+  font-family: var(--font-tijelo);
+  font-size: 0.9rem;
+  transition: border-color var(--tranzicija);
+}
+
+.forma-grupa input:focus,
+.forma-grupa select:focus,
+.forma-grupa textarea:focus {
+  outline: none;
+  border-color: var(--boja-zlatna);
+}
+
+.forma-grupa textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.polje-greska {
+  border-color: #e74c3c !important;
+}
+
+.greska {
+  color: #e74c3c;
+  font-size: 0.82rem;
+  display: none;
+}
+
+.forma-dugmad {
+  display: flex;
+  gap: var(--razmak-m);
+  margin-top: var(--razmak-m);
+}
+
+.dugme-pošalji {
+  background-color: var(--boja-zlatna);
+  color: #000;
+  border: none;
+  padding: 10px 24px;
+  font-family: var(--font-glavni);
+  font-size: 0.95rem;
+  border-radius: var(--radijus);
+  cursor: pointer;
+  transition: opacity var(--tranzicija);
+}
+
+.dugme-pošalji:hover {
+  opacity: 0.85;
+}
+
+.dugme-reset {
+  background: transparent;
+  color: var(--boja-zlatna);
+  border: 1px solid var(--boja-zlatna);
+  padding: 10px 24px;
+  font-family: var(--font-glavni);
+  font-size: 0.95rem;
+  border-radius: var(--radijus);
+  cursor: pointer;
+  transition: background-color var(--tranzicija), color var(--tranzicija);
+}
+
+.dugme-reset:hover {
+  background-color: var(--boja-zlatna);
+  color: #000;
+}
+
+.uspjesna-poruka {
+  background-color: rgba(201, 163, 81, 0.15);
+  border: 1px solid var(--boja-zlatna);
+  border-radius: var(--radijus);
+  padding: var(--razmak-m);
+  font-family: var(--font-glavni);
+  color: var(--boja-zlatna);
+  margin-bottom: var(--razmak-m);
+}
+
+.kontakt-aside {
+  width: 280px;
+  flex-shrink: 0;
+  background-color: var(--boja-sidebar);
+  border-radius: var(--radijus);
+  padding: var(--razmak-m);
+}
+
+.kontakt-aside h3 {
+  font-family: var(--font-glavni);
+  color: var(--boja-zlatna);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  margin-top: var(--razmak-m);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--boja-zlatna);
+}
+
+.kontakt-aside h3:first-child {
+  margin-top: 0;
+}
+
+.kontakt-lista {
+  list-style: none;
+  font-size: 0.88rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.kontakt-lista li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 600px) {
+  .kontakt-main {
+    flex-direction: column;
+    padding: var(--razmak-m);
+  }
+  .kontakt-aside {
+    width: 100%;
+  }
+  .forma-dugmad {
+    flex-direction: column;
+  }
+}
