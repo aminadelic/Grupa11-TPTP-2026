@@ -250,3 +250,132 @@ window.addEventListener('resize', function() {
     skalajKrik();
     skalajGuernicu();
 });
+// ============================================================
+// KONTAKT FORMA VALIDACIJA — Amina Arifagić
+// ============================================================
+
+(function () {
+
+    var forma = document.getElementById('kontakt-forma');
+    var uspjesnaPoruka = document.getElementById('uspjesna-poruka');
+    var dugmeReset = document.getElementById('dugme-reset');
+
+    // Regex za email validaciju
+    // Uz pomoć Claude-a sam pronašla/razumjela ovaj pattern:
+    var emailRegex = /^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i;
+
+    // Regex za telefon — samo cifre, razmaci i crtice
+    var telefonRegex = /^[0-9\s\-\+]{7,15}$/;
+
+    function prikaziGresku(idGreske, poruka) {
+        var el = document.getElementById(idGreske);
+        if (el) {
+            el.textContent = poruka;
+            el.style.display = 'block';
+        }
+        var polje = document.getElementById(idGreske.replace('greska-', ''));
+        if (polje) polje.classList.add('polje-greska');
+    }
+
+    function ocistiGresku(idGreske) {
+        var el = document.getElementById(idGreske);
+        if (el) {
+            el.textContent = '';
+            el.style.display = 'none';
+        }
+        var polje = document.getElementById(idGreske.replace('greska-', ''));
+        if (polje) polje.classList.remove('polje-greska');
+    }
+
+    function validirajFormu() {
+        var ispravna = true;
+
+        // Ime
+        var ime = document.getElementById('ime').value.trim();
+        if (ime === '') {
+            prikaziGresku('greska-ime', '⚠ Ime je obavezno polje.');
+            ispravna = false;
+        } else {
+            ocistiGresku('greska-ime');
+        }
+
+        // Prezime
+        var prezime = document.getElementById('prezime').value.trim();
+        if (prezime === '') {
+            prikaziGresku('greska-prezime', '⚠ Prezime je obavezno polje.');
+            ispravna = false;
+        } else {
+            ocistiGresku('greska-prezime');
+        }
+
+        // Email
+        var email = document.getElementById('email').value.trim();
+        if (email === '') {
+            prikaziGresku('greska-email', '⚠ Email je obavezno polje.');
+            ispravna = false;
+        } else if (!emailRegex.test(email)) {
+            prikaziGresku('greska-email', '⚠ Email nije u ispravnom formatu (primjer@email.com).');
+            ispravna = false;
+        } else {
+            ocistiGresku('greska-email');
+        }
+
+        // Telefon
+        var telefon = document.getElementById('telefon').value.trim();
+        if (telefon === '') {
+            prikaziGresku('greska-telefon', '⚠ Telefon je obavezno polje.');
+            ispravna = false;
+        } else if (!telefonRegex.test(telefon)) {
+            prikaziGresku('greska-telefon', '⚠ Telefon smije sadržavati samo cifre, razmake i crtice.');
+            ispravna = false;
+        } else {
+            ocistiGresku('greska-telefon');
+        }
+
+        // Tema
+        var tema = document.getElementById('tema').value;
+        if (tema === '') {
+            prikaziGresku('greska-tema', '⚠ Molimo odaberite temu upita.');
+            ispravna = false;
+        } else {
+            ocistiGresku('greska-tema');
+        }
+
+        // Poruka
+        var poruka = document.getElementById('poruka').value.trim();
+        if (poruka === '') {
+            prikaziGresku('greska-poruka', '⚠ Poruka je obavezno polje.');
+            ispravna = false;
+        } else if (poruka.length < 10) {
+            prikaziGresku('greska-poruka', '⚠ Poruka mora imati najmanje 10 znakova.');
+            ispravna = false;
+        } else {
+            ocistiGresku('greska-poruka');
+        }
+
+        return ispravna;
+    }
+
+    // Submit
+    forma.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (validirajFormu()) {
+            var ime = document.getElementById('ime').value.trim();
+            uspjesnaPoruka.textContent = '✓ Hvala, ' + ime + '! Vaša poruka je uspješno poslana. Javit ćemo vam se uskoro.';
+            uspjesnaPoruka.style.display = 'block';
+            forma.style.display = 'none';
+        }
+    });
+
+    // Reset
+    dugmeReset.addEventListener('click', function () {
+        forma.reset();
+        uspjesnaPoruka.style.display = 'none';
+        forma.style.display = 'block';
+        ['ime', 'prezime', 'email', 'telefon', 'tema', 'poruka'].forEach(function (polje) {
+            ocistiGresku('greska-' + polje);
+        });
+    });
+
+}());
